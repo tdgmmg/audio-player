@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+</head>
+<body>
+    <button onclick="playAudio('audio/audio1.mp3')">Play Audio 1</button>
+    <button onclick="playAudio('audio/audio2.mp3')">Play Audio 2</button>
+    <button onclick="playAudio('audio/audio3.mp3')">Play Audio 3</button>
+    <button onclick="playAudio('audio/audio4.mp3')">Play Audio 4</button>
+    <button onclick="playAudio('audio/audio5.mp3')">Play Audio 5</button>
+    <button onclick="playAudio('audio/audio6.mp3')">Play Audio 6</button>
+    <button onclick="playAudio('audio/audio7.mp3')">Play Audio 7</button>
+    <button onclick="playAudio('audio/audio8.mp3')">Play Audio 8</button>
+
+    <audio id="audioPlayer"></audio>
+
+    <script>
+        function playAudio(file) {
+            var audio = document.getElementById('audioPlayer');
+            audio.src = file;
+            audio.play();
+
+            // Stop the audio after 20 seconds
+            setTimeout(function() {
+                audio.pause();
+                audio.currentTime = 0; // Reset to the beginning
+            }, 20000); // 20000 milliseconds = 20 seconds
+        }
+    </script>
+</body>
+</html>
